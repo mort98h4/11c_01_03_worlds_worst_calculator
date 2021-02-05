@@ -13,6 +13,10 @@ function calculateResults() {
     console.log("calculateResults");
     const firstNumber = document.querySelector("#firstnumber");
     const secondNumber = document.querySelector("#secondnumber");
+    const operator = document.querySelector("#operator");
+    let selectedOperator = operator.options[operator.selectedIndex].text;
+
+    console.log(selectedOperator);
 
     let value1 = firstNumber.value;
     let value2 = secondNumber.value;
