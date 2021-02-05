@@ -14,7 +14,10 @@ function start() {
 
     // We need to make these clickable
     document.querySelector("#calculate").addEventListener("click", calculateResults);
-    document.querySelector("#clear").addEventListener("click", clearResults);
+    document.querySelector("#clear").addEventListener("click", () => {
+        // We can clear out the results list after calculating ALL the numbers
+        results.innerHTML = "";
+    });
 }
 
 // We clicked on #calculate
@@ -78,8 +81,4 @@ function calculateResults() {
     // We're just gonna add some automatic scroll
     const scroll  = results.scrollHeight;
     results.scrollBy(0, scroll);
-}
-
-function clearResults() {
-    console.log("clearResults");
 }
