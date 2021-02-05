@@ -37,6 +37,8 @@ function calculateResults() {
     result.textContent = firstNumber.value;
     results.appendChild(result);
 
+    const scroll  = results.scrollHeight;
+    results.scrollBy(0, scroll);
 }
 
 function clearResults() {
