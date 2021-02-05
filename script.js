@@ -1,9 +1,12 @@
 "use strict";
+const results = document.querySelector("#results");
 
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
     console.log("start");
+
+    results.innerHTML = "";
 
     document.querySelector("#calculate").addEventListener("click", calculateResults);
     document.querySelector("#clear").addEventListener("click", clearResults);
@@ -15,9 +18,6 @@ function calculateResults() {
     const secondNumber = document.querySelector("#secondnumber");
     const operator = document.querySelector("#operator");
     let selectedOperator = operator.value;
-
-    console.log(selectedOperator);
-    // console.log(typeof(selectedOperator));
 
     let value1 = firstNumber.value;
     let value2 = secondNumber.value;
@@ -32,6 +32,11 @@ function calculateResults() {
         firstNumber.value = Number(value1) / Number(value2);
     }
     secondNumber.value = "";
+
+    let result = document.createElement("li");
+    result.textContent = firstNumber.value;
+    results.appendChild(result);
+
 }
 
 function clearResults() {
