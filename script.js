@@ -14,15 +14,23 @@ function calculateResults() {
     const firstNumber = document.querySelector("#firstnumber");
     const secondNumber = document.querySelector("#secondnumber");
     const operator = document.querySelector("#operator");
-    let selectedOperator = operator.options[operator.selectedIndex].text;
+    let selectedOperator = operator.value;
 
     console.log(selectedOperator);
+    // console.log(typeof(selectedOperator));
 
     let value1 = firstNumber.value;
     let value2 = secondNumber.value;
-    console.log(Number(value1) + Number(value2));
 
-    firstNumber.value = Number(value1) + Number(value2);
+    if (selectedOperator === "add") {
+        firstNumber.value = Number(value1) + Number(value2);
+    } else if (selectedOperator === "sub") {
+        firstNumber.value = Number(value1) - Number(value2);
+    } else if (selectedOperator === "mul") {
+        firstNumber.value = Number(value1) * Number(value2);
+    } else if (selectedOperator === "div") {
+        firstNumber.value = Number(value1) / Number(value2);
+    }
     secondNumber.value = "";
 }
 
